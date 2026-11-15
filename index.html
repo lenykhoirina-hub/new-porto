@@ -1,0 +1,1688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Personal Portfolio of Leny Khoirina - Software Engineering Student at SMK Negeri 1 Kandeman. Exploring Web Development, Programming, and UI/UX Design.">
+  <meta name="author" content="Leny Khoirina">
+  <title>Leny Khoirina | Creative Software Engineering Portfolio</title>
+
+  <!-- Google Fonts: Outfit (Headings), Plus Jakarta Sans (Body), Playfair Display (Editorial Script) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Main Stylesheet (Pure CSS3 - No JavaScript) -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- ====================================================================
+       PURE CSS STATE CONTROLS (NO JAVASCRIPT REQUIRED)
+       Theme switch, language switch (EN/ID), and mobile navigation drawer.
+       Placed at top of body to control siblings via CSS selectors.
+       ==================================================================== -->
+  <input type="checkbox" id="theme-toggle" class="state-checkbox" aria-label="Toggle Dark/Light Mode">
+  <input type="radio" name="site-language" id="lang-en" checked class="state-radio" aria-label="English">
+  <input type="radio" name="site-language" id="lang-id" class="state-radio" aria-label="Bahasa Indonesia">
+  <input type="checkbox" id="nav-toggle" class="state-checkbox" aria-label="Toggle Navigation Menu">
+
+  <div class="site-wrapper">
+
+    <!-- ==================================================================
+         FIXED NAVBAR (POSITION: FIXED, TOP: 0, Z-INDEX: 1000)
+         ================================================================== -->
+    <header class="site-header navbar">
+      <div class="container navbar-inner">
+        <!-- Logo / Stylized Name on the Left -->
+        <a href="#home" class="brand" aria-label="Leny Khoirina Home">
+          <span>lenykhn</span>
+        </a>
+
+        <!-- Desktop Navigation on the Right (Anchor Links to Sections) -->
+        <nav class="nav-menu" aria-label="Primary Navigation">
+          <a href="#home" class="nav-link">
+            <span class="lang-en">Home</span>
+            <span class="lang-id">Beranda</span>
+          </a>
+          <a href="#about" class="nav-link">
+            <span class="lang-en">About</span>
+            <span class="lang-id">Tentang</span>
+          </a>
+          <a href="#education" class="nav-link">
+            <span class="lang-en">Education</span>
+            <span class="lang-id">Pendidikan</span>
+          </a>
+          <a href="#skill" class="nav-link">
+            <span class="lang-en">Skill</span>
+            <span class="lang-id">Keahlian</span>
+          </a>
+          <a href="#experience" class="nav-link">
+            <span class="lang-en">Experience</span>
+            <span class="lang-id">Pengalaman</span>
+          </a>
+          <a href="#certificate" class="nav-link">
+            <span class="lang-en">Certificate</span>
+            <span class="lang-id">Sertifikat</span>
+          </a>
+          <a href="#contact" class="nav-link">
+            <span class="lang-en">Contact</span>
+            <span class="lang-id">Kontak</span>
+          </a>
+        </nav>
+
+        <!-- Navbar Controls: Language Switch + Theme Switch + Mobile Hamburger -->
+        <div class="header-actions">
+          <!-- Pure CSS Language Switcher -->
+          <div class="lang-switcher" title="Change Language / Ganti Bahasa">
+            <label for="lang-en" class="lang-pill lang-pill-en">EN</label>
+            <label for="lang-id" class="lang-pill lang-pill-id">ID</label>
+          </div>
+
+          <!-- Pure CSS Theme Toggle Switch -->
+          <label for="theme-toggle" class="theme-switch-label" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">
+            <span class="theme-icon icon-sun" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 00-1.41 0 .996.996 0 000 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 00-1.41 0 .996.996 0 000 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96a.996.996 0 00-1.41-1.41l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36a.996.996 0 00-1.41-1.41l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z" />
+              </svg>
+            </span>
+            <span class="theme-icon icon-moon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12.3 2a10 10 0 0 0-1.9 19.8 10 10 0 0 0 11.6-11.6c-.6.1-1.2.2-1.8.2a8 8 0 0 1-7.9-8.4z" />
+              </svg>
+            </span>
+            <span class="theme-slider" aria-hidden="true"></span>
+          </label>
+
+          <!-- Mobile Hamburger Toggle (CSS Only) -->
+          <label for="nav-toggle" class="hamburger" aria-label="Toggle mobile menu">
+            <span class="line line-1"></span>
+            <span class="line line-2"></span>
+            <span class="line line-3"></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Navigation Menu (Pure CSS) -->
+      <div class="mobile-nav-drawer" aria-label="Mobile Navigation Drawer">
+        <div class="container mobile-nav-inner">
+          <a href="#home" class="mobile-nav-link">
+            <span class="lang-en">Home</span>
+            <span class="lang-id">Beranda</span>
+          </a>
+          <a href="#about" class="mobile-nav-link">
+            <span class="lang-en">About</span>
+            <span class="lang-id">Tentang</span>
+          </a>
+          <a href="#education" class="mobile-nav-link">
+            <span class="lang-en">Education</span>
+            <span class="lang-id">Pendidikan</span>
+          </a>
+          <a href="#skill" class="mobile-nav-link">
+            <span class="lang-en">Skill</span>
+            <span class="lang-id">Keahlian</span>
+          </a>
+          <a href="#experience" class="mobile-nav-link">
+            <span class="lang-en">Experience</span>
+            <span class="lang-id">Pengalaman</span>
+          </a>
+          <a href="#certificate" class="mobile-nav-link">
+            <span class="lang-en">Certificate</span>
+            <span class="lang-id">Sertifikat</span>
+          </a>
+          <a href="#contact" class="mobile-nav-link">
+            <span class="lang-en">Contact</span>
+            <span class="lang-id">Kontak</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ==================================================================
+         MAIN CONTINUOUS SCROLL CONTAINER
+         Section order: HOME -> ABOUT -> EDUCATION -> SKILL -> EXPERIENCE -> CERTIFICATE -> CONTACT
+         ================================================================== -->
+    <main class="site-main">
+
+      <!-- ==============================================================
+           SECTION 01: HOME
+           ============================================================== -->
+      <section id="home" class="portfolio-section section-home">
+        <!-- Decorative geometric background elements -->
+        <div class="section-bg-decor" aria-hidden="true">
+          <div class="decor-circle-1"></div>
+          <div class="decor-circle-2"></div>
+          <div class="decor-grid-dots"></div>
+          <span class="decor-star decor-star-1">✦</span>
+          <span class="decor-star decor-star-2">✦</span>
+          <span class="decor-star decor-star-3">✦</span>
+        </div>
+
+        <div class="container hero-container">
+          <div class="hero-grid">
+            <!-- Left Column: Editorial Typography & Bio -->
+            <div class="hero-content">
+              <!-- Large Editorial Title with overlapping script word -->
+              <div class="hero-editorial-title">
+                <span class="hero-script-tag">Creative</span>
+                <span class="hero-sub-eyebrow">MY</span>
+                <h1 class="hero-main-title">PORTFOLIO</h1>
+              </div>
+
+              <!-- Personal Identity & Role Badge -->
+              <div class="hero-identity">
+                <div class="hero-name">Leny Khoirina</div>
+                <div class="hero-role-badge">
+                  <span class="lang-en">Software Engineering Student &bull; RPL</span>
+                  <span class="lang-id">Siswa Rekayasa Perangkat Lunak &bull; RPL</span>
+                </div>
+              </div>
+
+              <!-- Bilingual Description -->
+              <p class="hero-bio lang-en">
+                Software Engineering student with an interest in web development, programming, and UI/UX design.
+                Passionate about turning creative ideas into structured, elegant, and user-centered digital solutions.
+              </p>
+              <p class="hero-bio lang-id">
+                Pelajar Rekayasa Perangkat Lunak yang memiliki ketertarikan pada web development, pemrograman, dan
+                desain UI/UX. Senang mengubah gagasan kreatif menjadi solusi digital yang terstruktur, rapi, dan mudah
+                digunakan.
+              </p>
+
+              <!-- CTA Buttons & Social Icons -->
+              <div class="hero-cta-group">
+                <div class="hero-buttons">
+                  <a href="#contact" class="editorial-cta">
+                    <span class="lang-en">LET'S CONNECT</span>
+                    <span class="lang-id">HUBUNGI SAYA</span>
+                  </a>
+                  <a href="#about" class="btn btn-secondary">
+                    <span class="lang-en">Explore Story &darr;</span>
+                    <span class="lang-id">Jelajahi Profil &darr;</span>
+                  </a>
+                </div>
+
+                <!-- Social Media Channels -->
+                <div class="hero-socials" aria-label="Social Media Links">
+                  <a href="https://github.com/lenykhoirina" target="_blank" rel="noopener noreferrer"
+                    class="social-link" title="GitHub" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" />
+                    </svg>
+                  </a>
+                  <a href="https://linkedin.com/in/lenykhoirina" target="_blank" rel="noopener noreferrer"
+                    class="social-link" title="LinkedIn" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                    </svg>
+                  </a>
+                  <a href="https://instagram.com/lnykhnaaa" target="_blank" rel="noopener noreferrer"
+                    class="social-link" title="Instagram" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                  </a>
+                  <a href="mailto:lenyykhoirina@gmail.com" class="social-link" title="Email" aria-label="Email">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Profile Image with 5 Floating Tool Icons (NO TEXT LABELS UNDERNEATH) -->
+            <div class="hero-visual">
+              <div class="portrait-frame">
+                <!-- Profile Photo -->
+                <div class="portrait-img-wrap">
+                  <img src="assets/images/profile.jpg" alt="Leny Khoirina - Software Engineering Student"
+                    class="portrait-img">
+                </div>
+
+                <!-- Floating Tool Icon 1: Visual Studio (Top-Left) -->
+                <div class="floating-tool tool-vs" title="Visual Studio">
+                  <img src="assets/icons/visual-studio.svg" alt="Visual Studio">
+                </div>
+
+                <!-- Floating Tool Icon 2: Visual Studio Code (Top-Right) -->
+                <div class="floating-tool tool-vscode" title="Visual Studio Code">
+                  <img src="assets/icons/vscode.svg" alt="Visual Studio Code">
+                </div>
+
+                <!-- Floating Tool Icon 3: Figma (Center-Right) -->
+                <div class="floating-tool tool-figma" title="Figma">
+                  <img src="assets/icons/figma.svg" alt="Figma">
+                </div>
+
+                <!-- Floating Tool Icon 4: GitHub (Bottom-Left) -->
+                <div class="floating-tool tool-github" title="GitHub">
+                  <img src="assets/icons/github.svg" alt="GitHub">
+                </div>
+
+                <!-- Floating Tool Icon 5: Canva (Bottom-Right) -->
+                <div class="floating-tool tool-canva" title="Canva">
+                  <img src="assets/icons/canva.svg" alt="Canva">
+                </div>
+              </div>
+
+              <!-- Stylized Name Tag with Pointer Cursor Underneath -->
+              <div class="portrait-footer-tag">
+                <span>LENY KHOIRINA</span>
+                <svg class="pointer-cursor-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 11l3 3L22 4" />
+                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Highlights Bar -->
+          <div class="highlights-bar" aria-label="Key Highlights">
+            <div class="highlights-grid">
+              <div class="highlight-item">
+                <div class="highlight-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+                  </svg>
+                </div>
+                <div class="highlight-text">
+                  <h4>SMK N 1 Kandeman</h4>
+                  <p>
+                    <span class="lang-en">Software Engineering Major</span>
+                    <span class="lang-id">Rekayasa Perangkat Lunak (RPL)</span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="highlight-item">
+                <div class="highlight-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
+                  </svg>
+                </div>
+                <div class="highlight-text">
+                  <h4>Frontend &amp; Logic</h4>
+                  <p>
+                    <span class="lang-en">HTML, CSS &amp; C# Basics</span>
+                    <span class="lang-id">Dasar HTML, CSS &amp; C#</span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="highlight-item">
+                <div class="highlight-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                  </svg>
+                </div>
+                <div class="highlight-text">
+                  <h4>UI/UX Prototyping</h4>
+                  <p>
+                    <span class="lang-en">Figma &amp; Modern Layouts</span>
+                    <span class="lang-id">Figma &amp; Tata Letak Modern</span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="highlight-item">
+                <div class="highlight-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                  </svg>
+                </div>
+                <div class="highlight-text">
+                  <h4>Batang, Indonesia</h4>
+                  <p>
+                    <span class="lang-en">Central Java</span>
+                    <span class="lang-id">Jawa Tengah</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Smooth Scroll Hint -->
+          <div class="scroll-down-hint">
+            <a href="#about" aria-label="Scroll down to About Section">
+              <span class="scroll-mouse">
+                <span class="scroll-wheel"></span>
+              </span>
+              <span class="scroll-text">
+                <span class="lang-en">Scroll to explore</span>
+                <span class="lang-id">Gulir untuk melihat</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==============================================================
+           SECTION 02: ABOUT ME
+           ============================================================== -->
+      <section id="about" class="portfolio-section section-about">
+        <div class="section-bg-decor" aria-hidden="true">
+          <div class="decor-line-pattern"></div>
+          <span class="decor-star decor-star-4">✦</span>
+        </div>
+
+        <div class="container">
+          <!-- Section Header -->
+          <header class="section-header text-center">
+            <span class="section-eyebrow">
+              <span class="lang-en">Get to know me</span>
+              <span class="lang-id">Kenali saya</span>
+            </span>
+            <h2 class="section-title">
+              <span class="lang-en">ABOUT ME</span>
+              <span class="lang-id">TENTANG SAYA</span>
+            </h2>
+            <p class="section-subtitle">
+              <span class="lang-en">A student's perspective on coding, user experience, and continuous digital
+                learning.</span>
+              <span class="lang-id">Pandangan seorang siswa mengenai pemrograman, pengalaman pengguna, dan proses
+                belajar digital berkelanjutan.</span>
+            </p>
+            <div class="divider-line">
+              <span class="line"></span>
+              <span class="dot"></span>
+            </div>
+          </header>
+
+          <!-- About Grid: Left Photo & Info / Right Bio & Pillars -->
+          <div class="about-grid">
+            <!-- Left Column: Portrait & Personal Info Cards -->
+            <div class="about-card-left">
+              <div class="about-photo-wrapper">
+                <img src="assets/images/profile.jpg" alt="Leny Khoirina Portrait" class="about-photo">
+                <div class="about-photo-badge">
+                  <span>SMK N 1 Kandeman</span>
+                </div>
+              </div>
+
+              <!-- Structured Information Cards -->
+              <div class="about-info-list">
+                <div class="about-info-item">
+                  <span class="about-info-label">
+                    <span class="lang-en">Name</span>
+                    <span class="lang-id">Nama Lengkap</span>
+                  </span>
+                  <span class="about-info-value">Leny Khoirina</span>
+                </div>
+
+                <div class="about-info-item">
+                  <span class="about-info-label">
+                    <span class="lang-en">Status</span>
+                    <span class="lang-id">Status</span>
+                  </span>
+                  <span class="about-info-value">
+                    <span class="lang-en">Student</span>
+                    <span class="lang-id">Pelajar</span>
+                  </span>
+                </div>
+
+                <div class="about-info-item">
+                  <span class="about-info-label">
+                    <span class="lang-en">Major</span>
+                    <span class="lang-id">Jurusan</span>
+                  </span>
+                  <span class="about-info-value">Software Engineering / RPL</span>
+                </div>
+
+                <div class="about-info-item">
+                  <span class="about-info-label">
+                    <span class="lang-en">School</span>
+                    <span class="lang-id">Sekolah</span>
+                  </span>
+                  <span class="about-info-value">SMK Negeri 1 Kandeman</span>
+                </div>
+
+                <div class="about-info-item">
+                  <span class="about-info-label">
+                    <span class="lang-en">Location</span>
+                    <span class="lang-id">Lokasi</span>
+                  </span>
+                  <span class="about-info-value">Batang, Jawa Tengah</span>
+                </div>
+              </div>
+
+              <a href="#contact" class="btn btn-primary" style="width: 100%;">
+                <span class="lang-en">Get In Touch</span>
+                <span class="lang-id">Hubungi Saya</span>
+              </a>
+            </div>
+
+            <!-- Right Column: Personal Story & Value Pillars -->
+            <div class="about-story">
+              <!-- Lead Paragraph -->
+              <p class="lead-paragraph lang-en">
+                Hi, I'm Leny Khoirina, a Vocational High School student majoring in Software Engineering (RPL) at SMK
+                Negeri 1 Kandeman. I have a strong interest in technology, programming, web development, and UI/UX
+                design. I enjoy learning new things, creating digital projects, and improving my skills through school
+                projects and personal exploration.
+              </p>
+              <p class="lead-paragraph lang-id">
+                Hai, saya Leny Khoirina, seorang pelajar SMK jurusan Rekayasa Perangkat Lunak (RPL) di SMK Negeri 1
+                Kandeman. Saya memiliki ketertarikan pada teknologi, pemrograman, pengembangan website, dan desain
+                UI/UX. Saya senang mempelajari hal baru, membuat berbagai proyek digital, serta mengembangkan kemampuan
+                melalui proyek sekolah maupun eksplorasi pribadi.
+              </p>
+
+              <p class="secondary-paragraph lang-en">
+                At SMK Negeri 1 Kandeman, my focus is directed toward understanding how software architecture and visual
+                interfaces come together to form cohesive user experiences. I work comfortably with semantic HTML, CSS
+                styling, C# programming logic, and Figma prototyping. I believe that clean code and deliberate design go
+                hand-in-hand to produce reliable digital products.
+              </p>
+              <p class="secondary-paragraph lang-id">
+                Di SMK Negeri 1 Kandeman, fokus saya terarah pada pemahaman bagaimana arsitektur perangkat lunak dan
+                antarmuka visual berpadu membentuk pengalaman pengguna yang nyaman. Saya terbiasa menyusun HTML
+                semantik, tata letak CSS modern, logika pemrograman C#, dan prototipe di Figma. Bagi saya, kode yang
+                rapi dan desain yang matang adalah kunci terciptanya karya digital berkualitas.
+              </p>
+
+              <!-- Value Pillars Grid -->
+              <div class="values-grid">
+                <div class="value-card">
+                  <div class="value-icon">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
+                    </svg>
+                  </div>
+                  <h4>
+                    <span class="lang-en">Clean Structure</span>
+                    <span class="lang-id">Struktur Rapi</span>
+                  </h4>
+                  <p>
+                    <span class="lang-en">Prioritizing semantic markup, clear CSS organization, and readable project
+                      structures.</span>
+                    <span class="lang-id">Mengutamakan markup semantik, struktur CSS rapi, dan keterbacaan kode yang
+                      baik.</span>
+                  </p>
+                </div>
+
+                <div class="value-card">
+                  <div class="value-icon">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                    </svg>
+                  </div>
+                  <h4>
+                    <span class="lang-en">User Empathy</span>
+                    <span class="lang-id">Fokus Pengguna</span>
+                  </h4>
+                  <p>
+                    <span class="lang-en">Designing digital experiences with harmonious color palettes, intuitive
+                      layouts, and accessibility.</span>
+                    <span class="lang-id">Merancang antarmuka ramah pengguna dengan palet harmonis, tata letak intuitif,
+                      dan aksesibilitas.</span>
+                  </p>
+                </div>
+
+                <div class="value-card">
+                  <div class="value-icon">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z" />
+                    </svg>
+                  </div>
+                  <h4>
+                    <span class="lang-en">Curiosity &amp; Growth</span>
+                    <span class="lang-id">Semangat Belajar</span>
+                  </h4>
+                  <p>
+                    <span class="lang-en">Always excited to master new developer workflows, modern CSS features, and
+                      design tools.</span>
+                    <span class="lang-id">Selalu antusias mempelajari alur kerja baru, fitur modern CSS, dan perangkat
+                      lunak desain.</span>
+                  </p>
+                </div>
+
+                <div class="value-card">
+                  <div class="value-icon">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 3s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+                    </svg>
+                  </div>
+                  <h4>
+                    <span class="lang-en">Collaborative Spirit</span>
+                    <span class="lang-id">Kolaborasi Tim</span>
+                  </h4>
+                  <p>
+                    <span class="lang-en">Communicating ideas transparently and contributing actively to group
+                      goals.</span>
+                    <span class="lang-id">Menyampaikan gagasan secara terbuka dan berkontribusi aktif dalam pencapaian
+                      tim.</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==============================================================
+           SECTION 03: MY EDUCATION
+           ============================================================== -->
+      <section id="education" class="portfolio-section section-education">
+        <div class="section-bg-decor" aria-hidden="true">
+          <div class="decor-circle-soft"></div>
+        </div>
+
+        <div class="container">
+          <!-- Section Header -->
+          <header class="section-header text-center">
+            <span class="section-eyebrow">
+              <span class="lang-en">Academic Journey</span>
+              <span class="lang-id">Perjalanan Akademik</span>
+            </span>
+            <h2 class="section-title">
+              <span class="lang-en">MY EDUCATION</span>
+              <span class="lang-id">PENDIDIKAN SAYA</span>
+            </h2>
+            <p class="section-subtitle">
+              <span class="lang-en">Here is a brief overview of my educational background and the journey that has
+                helped me develop my interests and skills in technology.</span>
+              <span class="lang-id">Berikut adalah perjalanan pendidikan saya yang membantu saya mengembangkan minat dan
+                kemampuan, terutama di bidang teknologi.</span>
+            </p>
+            <div class="divider-line">
+              <span class="line"></span>
+              <span class="dot"></span>
+            </div>
+          </header>
+
+          <!-- Education Timeline / Cards -->
+          <div class="education-timeline">
+            <!-- Main Card: SMK Negeri 1 Kandeman -->
+            <article class="edu-card edu-card-featured">
+              <div class="edu-node" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+                </svg>
+              </div>
+
+              <div class="edu-content">
+                <div class="edu-meta">
+                  <span class="edu-badge">
+                    <span class="lang-en">Current Vocational Studies</span>
+                    <span class="lang-id">Pendidikan Kejuruan Aktif</span>
+                  </span>
+                  <span class="edu-years">2025 &mdash; 2028</span>
+                </div>
+
+                <h3 class="edu-school">SMK Negeri 1 Kandeman</h3>
+                <h4 class="edu-program">
+                  <span class="lang-en">Software Engineering / Rekayasa Perangkat Lunak (RPL)</span>
+                  <span class="lang-id">Rekayasa Perangkat Lunak (RPL)</span>
+                </h4>
+
+                <p class="edu-desc lang-en">
+                  Studying software engineering with a focus on programming, web development, software projects, UI/UX
+                  design, and problem solving.
+                </p>
+                <p class="edu-desc lang-id">
+                  Mempelajari rekayasa perangkat lunak dengan fokus pada pemrograman, pengembangan website, pengerjaan
+                  proyek perangkat lunak, desain UI/UX, dan pemecahan masalah.
+                </p>
+
+                <!-- Focus Competencies / Tags -->
+                <div class="edu-tags">
+                  <span class="tag-pill">Web Development (HTML &amp; CSS)</span>
+                  <span class="tag-pill">C# Programming</span>
+                  <span class="tag-pill">UI/UX Design with Figma</span>
+                  <span class="tag-pill">Software Engineering Concepts</span>
+                  <span class="tag-pill">Algorithm &amp; Data Logic</span>
+                  <span class="tag-pill">Team Project Collaboration</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==============================================================
+           SECTION 04: MY SKILLS
+           ============================================================== -->
+      <section id="skill" class="portfolio-section section-skill">
+        <div class="section-bg-decor" aria-hidden="true">
+          <div class="decor-grid-dots"></div>
+        </div>
+
+        <div class="container">
+          <!-- Section Header -->
+          <header class="section-header text-center">
+            <span class="section-eyebrow">
+              <span class="lang-en">Technical &amp; Interpersonal</span>
+              <span class="lang-id">Kemampuan &amp; Keahlian</span>
+            </span>
+            <h2 class="section-title">
+              <span class="lang-en">MY SKILLS</span>
+              <span class="lang-id">KEAHLIAN SAYA</span>
+            </h2>
+            <p class="section-subtitle">
+              <span class="lang-en">A breakdown of my programming foundations, frontend web skills, design competencies,
+                and everyday developer tools.</span>
+              <span class="lang-id">Rangkuman mengenai dasar pemrograman, pengembangan web frontend, kompetensi desain,
+                serta perangkat lunak yang saya gunakan.</span>
+            </p>
+            <div class="divider-line">
+              <span class="line"></span>
+              <span class="dot"></span>
+            </div>
+          </header>
+
+          <div class="skills-wrapper">
+            <!-- 1. HARD SKILLS -->
+            <div class="skill-category-block">
+              <div class="skill-category-header">
+                <span class="skill-cat-badge">01</span>
+                <h3 class="skill-category-title">
+                  <span class="lang-en">HARD SKILLS</span>
+                  <span class="lang-id">KEAHLIAN TEKNIS (HARD SKILLS)</span>
+                </h3>
+              </div>
+
+              <div class="hard-skills-grid">
+                <!-- Skill 1: C# -->
+                <article class="skill-card">
+                  <div class="skill-header">
+                    <div class="skill-icon-box">
+                      <svg viewBox="0 0 24 24">
+                        <path
+                          d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+                      </svg>
+                    </div>
+                    <div class="skill-title-meta">
+                      <h4>C#</h4>
+                      <span class="skill-level-tag">
+                        <span class="lang-en">Application Logic &bull; Core</span>
+                        <span class="lang-id">Logika Aplikasi &bull; Dasar</span>
+                      </span>
+                    </div>
+                  </div>
+
+                  <p class="skill-desc lang-en">
+                    Programming and basic application development. Exploring OOP fundamentals, conditional structures,
+                    loops, and building desktop utilities.
+                  </p>
+                  <p class="skill-desc lang-id">
+                    Pemrograman dan pengembangan aplikasi dasar. Mempelajari konsep dasar OOP, struktur logika
+                    percabangan, perulangan, dan aplikasi desktop.
+                  </p>
+
+                  <div class="skill-competencies">
+                    <span class="competency-chip">Object-Oriented Basics</span>
+                    <span class="competency-chip">Console &amp; Desktop Logic</span>
+                    <span class="competency-chip">Data Types &amp; Methods</span>
+                    <span class="competency-chip">Visual Studio IDE</span>
+                  </div>
+                </article>
+
+                <!-- Skill 2: HTML -->
+                <article class="skill-card">
+                  <div class="skill-header">
+                    <div class="skill-icon-box">
+                      <svg viewBox="0 0 24 24">
+                        <path
+                          d="M12 2L4 5l1.3 12.3L12 21l6.7-3.7L20 5l-8-3zm0 2.2l6.2 2.3-1.1 9.9L12 18.9l-5.1-2.5-1.1-9.9L12 4.2z" />
+                      </svg>
+                    </div>
+                    <div class="skill-title-meta">
+                      <h4>HTML</h4>
+                      <span class="skill-level-tag">
+                        <span class="lang-en">Semantic Markup &bull; Structure</span>
+                        <span class="lang-id">Markup Semantik &bull; Struktur</span>
+                      </span>
+                    </div>
+                  </div>
+
+                  <p class="skill-desc lang-en">
+                    Building the structure of web pages. Writing accessible, clean, semantic HTML code that supports
+                    responsive design and multi-page static navigation.
+                  </p>
+                  <p class="skill-desc lang-id">
+                    Membangun struktur dan kerangka halaman web. Menulis markup HTML semantik, bersih, aksesibel, dan
+                    mendukung navigasi website statis multi-halaman.
+                  </p>
+
+                  <div class="skill-competencies">
+                    <span class="competency-chip">HTML Semantics</span>
+                    <span class="competency-chip">Web Accessibility (ally)</span>
+                    <span class="competency-chip">Forms &amp; Input Validation</span>
+                    <span class="competency-chip">SEO-Friendly Meta</span>
+                  </div>
+                </article>
+
+                <!-- Skill 3: CSS -->
+                <article class="skill-card">
+                  <div class="skill-header">
+                    <div class="skill-icon-box">
+                      <svg viewBox="0 0 24 24">
+                        <path
+                          d="M12 2l-9 3 1.5 13.5L12 22l7.5-3.5L21 5l-9-3zm0 2.1l7.1 2.4-1.2 10.9L12 19.8l-5.9-2.7-1.2-10.9L12 4.1z" />
+                      </svg>
+                    </div>
+                    <div class="skill-title-meta">
+                      <h4>CSS</h4>
+                      <span class="skill-level-tag">
+                        <span class="lang-en">Styling &bull; Responsive Design</span>
+                        <span class="lang-id">Tata Letak &bull; Desain Responsif</span>
+                      </span>
+                    </div>
+                  </div>
+
+                  <p class="skill-desc lang-en">
+                    Designing layouts, colors, responsive interfaces, and visual styling. Utilizing modern Flexbox, CSS
+                    Grid, custom properties, and smooth keyframe animations.
+                  </p>
+                  <p class="skill-desc lang-id">
+                    Merancang tata letak, warna, antarmuka responsif, dan gaya visual. Memanfaatkan Flexbox, CSS Grid,
+                    variabel warna CSS, dan animasi transisi halus.
+                  </p>
+
+                  <div class="skill-competencies">
+                    <span class="competency-chip">CSS Grid &amp; Flexbox</span>
+                    <span class="competency-chip">CSS Animations</span>
+                    <span class="competency-chip">Responsive Media Queries</span>
+                    <span class="competency-chip">CSS Variables (Theming)</span>
+                  </div>
+                </article>
+
+                <!-- Skill 4: UI/UX Design -->
+                <article class="skill-card">
+                  <div class="skill-header">
+                    <div class="skill-icon-box">
+                      <svg viewBox="0 0 24 24">
+                        <path
+                          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                      </svg>
+                    </div>
+                    <div class="skill-title-meta">
+                      <h4>UI/UX Design</h4>
+                      <span class="skill-level-tag">
+                        <span class="lang-en">Interface Concept &bull; Prototyping</span>
+                        <span class="lang-id">Konsep Antarmuka &bull; Prototipe</span>
+                      </span>
+                    </div>
+                  </div>
+
+                  <p class="skill-desc lang-en">
+                    Creating user interfaces and considering user experience. Translating ideas into wireframes, visual
+                    component systems, and interactive prototypes.
+                  </p>
+                  <p class="skill-desc lang-id">
+                    Membuat antarmuka pengguna dan mempertimbangkan kenyamanan pengalaman pengguna. Menuangkan konsep ke
+                    dalam wireframe, sistem komponen visual, dan prototipe.
+                  </p>
+
+                  <div class="skill-competencies">
+                    <span class="competency-chip">Wireframing &amp; Flow</span>
+                    <span class="competency-chip">Visual Hierarchy</span>
+                    <span class="competency-chip">Monochromatic Color Design</span>
+                    <span class="competency-chip">User Persona Empathy</span>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <!-- 2. SOFT SKILLS -->
+            <div class="skill-category-block">
+              <div class="skill-category-header">
+                <span class="skill-cat-badge">02</span>
+                <h3 class="skill-category-title">
+                  <span class="lang-en">SOFT SKILLS</span>
+                  <span class="lang-id">KEMAMPUAN INTERPERSONAL (SOFT SKILLS)</span>
+                </h3>
+              </div>
+
+              <div class="soft-skills-grid">
+                <!-- Soft Skill 1: Communication Skills -->
+                <article class="soft-skill-card">
+                  <div class="soft-icon-circle">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z" />
+                    </svg>
+                  </div>
+                  <div class="soft-skill-info">
+                    <h4>
+                      <span class="lang-en">Communication Skills</span>
+                      <span class="lang-id">Komunikasi Efektif</span>
+                    </h4>
+                    <p class="lang-en">
+                      Ability to communicate ideas clearly and interact effectively with others. Skilled at presenting
+                      technical work to peers and teachers with clarity and active listening.
+                    </p>
+                    <p class="lang-id">
+                      Kemampuan menyampaikan ide secara jelas dan berinteraksi secara efektif dengan orang lain. Mampu
+                      mempresentasikan hasil proyek secara terstruktur dan mendengarkan masukan.
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Soft Skill 2: Teamwork -->
+                <article class="soft-skill-card">
+                  <div class="soft-icon-circle">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 3s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+                    </svg>
+                  </div>
+                  <div class="soft-skill-info">
+                    <h4>
+                      <span class="lang-en">Teamwork</span>
+                      <span class="lang-id">Kerja Sama Tim</span>
+                    </h4>
+                    <p class="lang-en">
+                      Ability to collaborate, share responsibilities, and work toward a common goal. Thriving in
+                      vocational group projects by supporting teammates and maintaining shared momentum.
+                    </p>
+                    <p class="lang-id">
+                      Kemampuan berkolaborasi, berbagi tanggung jawab, dan bekerja menuju tujuan bersama. Berperan aktif
+                      dalam kerja kelompok kejuruan dengan saling melengkapi dan menjaga ritme kerja.
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Soft Skill 3: Problem Solving -->
+                <article class="soft-skill-card">
+                  <div class="soft-icon-circle">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z" />
+                    </svg>
+                  </div>
+                  <div class="soft-skill-info">
+                    <h4>
+                      <span class="lang-en">Problem Solving</span>
+                      <span class="lang-id">Pemecahan Masalah</span>
+                    </h4>
+                    <p class="lang-en">
+                      Analyzing code errors, debugging CSS alignment challenges, and methodically breaking complex tasks
+                      into manageable steps.
+                    </p>
+                    <p class="lang-id">
+                      Menganalisis kesalahan kode, memecahkan kendala tata letak CSS, dan membagi tugas rumit menjadi
+                      langkah-langkah terarah.
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Soft Skill 4: Adaptability & Discipline -->
+                <article class="soft-skill-card">
+                  <div class="soft-icon-circle">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" />
+                    </svg>
+                  </div>
+                  <div class="soft-skill-info">
+                    <h4>
+                      <span class="lang-en">Adaptability &amp; Discipline</span>
+                      <span class="lang-id">Adaptabilitas &amp; Disiplin</span>
+                    </h4>
+                    <p class="lang-en">
+                      Quick to adapt to new software interfaces, school curriculum updates, and self-directed study
+                      schedules.
+                    </p>
+                    <p class="lang-id">
+                      Cepat menyesuaikan diri dengan lingkungan baru, pembaruan kurikulum sekolah, dan terbiasa belajar
+                      mandiri secara teratur.
+                    </p>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <!-- 3. TOOLS I USE -->
+            <div class="skill-category-block">
+              <div class="skill-category-header">
+                <span class="skill-cat-badge">03</span>
+                <h3 class="skill-category-title">
+                  <span class="lang-en">TOOLS I USE</span>
+                  <span class="lang-id">ALAT YANG SAYA GUNAKAN</span>
+                </h3>
+              </div>
+
+              <div class="tools-grid">
+                <!-- Tool 1: Visual Studio -->
+                <article class="tool-card">
+                  <div class="tool-card-icon">
+                    <img src="assets/icons/visual-studio.svg" alt="Visual Studio Logo">
+                  </div>
+                  <h4>Visual Studio</h4>
+                  <p>
+                    <span class="lang-en">Comprehensive IDE for C# programming and desktop software development.</span>
+                    <span class="lang-id">IDE komprehensif untuk pemrograman C# dan aplikasi desktop.</span>
+                  </p>
+                </article>
+
+                <!-- Tool 2: Visual Studio Code -->
+                <article class="tool-card">
+                  <div class="tool-card-icon">
+                    <img src="assets/icons/vscode.svg" alt="Visual Studio Code Logo">
+                  </div>
+                  <h4>VS Code</h4>
+                  <p>
+                    <span class="lang-en">Lightweight, high-speed code editor for HTML, CSS, and modern web
+                      development.</span>
+                    <span class="lang-id">Editor kode ringan untuk HTML, CSS, dan pengembangan web modern.</span>
+                  </p>
+                </article>
+
+                <!-- Tool 3: Figma -->
+                <article class="tool-card">
+                  <div class="tool-card-icon">
+                    <img src="assets/icons/figma.svg" alt="Figma Logo">
+                  </div>
+                  <h4>Figma</h4>
+                  <p>
+                    <span class="lang-en">Industry-standard collaborative tool for wireframing, UI design, and
+                      interactive prototyping.</span>
+                    <span class="lang-id">Aplikasi kolaboratif untuk wireframe, desain UI, dan prototipe
+                      interaktif.</span>
+                  </p>
+                </article>
+
+                <!-- Tool 4: GitHub -->
+                <article class="tool-card">
+                  <div class="tool-card-icon">
+                    <img src="assets/icons/github.svg" alt="GitHub Logo">
+                  </div>
+                  <h4>GitHub</h4>
+                  <p>
+                    <span class="lang-en">Platform for version control, repository management, and code tracking.</span>
+                    <span class="lang-id">Platform pengelolaan repositori, kendali versi, dan pelacakan kode.</span>
+                  </p>
+                </article>
+
+                <!-- Tool 5: Canva -->
+                <article class="tool-card">
+                  <div class="tool-card-icon">
+                    <img src="assets/icons/canva.svg" alt="Canva Logo">
+                  </div>
+                  <h4>Canva</h4>
+                  <p>
+                    <span class="lang-en">Graphic design tool used for presentation layouts, digital banners, and
+                      project documentation.</span>
+                    <span class="lang-id">Perangkat desain grafis untuk presentasi, poster visual, dan
+                      dokumentasi.</span>
+                  </p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==============================================================
+           SECTION 05: EXPERIENCE
+           ============================================================== -->
+      <section id="experience" class="portfolio-section section-experience">
+        <div class="section-bg-decor" aria-hidden="true">
+          <div class="decor-circle-1"></div>
+        </div>
+
+        <div class="container">
+          <!-- Section Header -->
+          <header class="section-header text-center">
+            <span class="section-eyebrow">
+              <span class="lang-en">Projects &amp; Activities</span>
+              <span class="lang-id">Proyek &amp; Aktivitas</span>
+            </span>
+            <h2 class="section-title">
+              <span class="lang-en">ACADEMIC &amp; PROJECT EXPERIENCE</span>
+              <span class="lang-id">PENGALAMAN AKADEMIK &amp; PROYEK</span>
+            </h2>
+            <p class="section-subtitle">
+              <span class="lang-en">Hands-on student experience gained through vocational high school coursework, web
+                explorations, UI/UX designs, and collaborative teamwork.</span>
+              <span class="lang-id">Pengalaman praktik siswa yang diperoleh melalui penugasan sekolah kejuruan,
+                eksplorasi pembuatan web, desain antarmuka, dan kolaborasi tim.</span>
+            </p>
+            <div class="divider-line">
+              <span class="line"></span>
+              <span class="dot"></span>
+            </div>
+          </header>
+
+          <!-- Experience Grid -->
+          <div class="experience-grid">
+            <!-- Experience Card 1: Web Development Projects -->
+            <article class="exp-card">
+              <div class="exp-header">
+                <span class="exp-role-badge">
+                  <span class="lang-en">Frontend Exploration</span>
+                  <span class="lang-id">Eksplorasi Frontend</span>
+                </span>
+                <span class="exp-timeframe">2025 &mdash; Present</span>
+              </div>
+
+              <h3 class="exp-title">
+                <span class="lang-en">Web Development Projects</span>
+                <span class="lang-id">Proyek Pengembangan Web</span>
+              </h3>
+
+              <p class="exp-desc lang-en">
+                Working on website projects using HTML and CSS and exploring responsive web design. Focus on creating
+                accessible, clean single-page and multi-section layouts with fluid responsiveness.
+              </p>
+              <p class="exp-desc lang-id">
+                Mengerjakan proyek website menggunakan HTML dan CSS serta mengeksplorasi desain web yang responsif.
+                Fokus pada pembuatan website yang bersih, terstruktur, aksesibel, dan nyaman di semua perangkat.
+              </p>
+
+              <div class="exp-highlights">
+                <div class="exp-highlight-item">
+                  <span class="bullet">&bull;</span>
+                  <span class="lang-en">Built modern one-page scrolling portfolios using semantic HTML and CSS.</span>
+                  <span class="lang-id">Membangun website portofolio satu halaman (single-page) dengan HTML semantik
+                    dan CSS modern.</span>
+                </div>
+                <div class="exp-highlight-item">
+                  <span class="bullet">&bull;</span>
+                  <span class="lang-en">Implemented pure CSS themes (Dark/Light) and bilingual language toggles without
+                    JS.</span>
+                  <span class="lang-id">Menerapkan tema gelap/terang serta penggantian bahasa secara murni menggunakan
+                    CSS tanpa JavaScript.</span>
+                </div>
+                <div class="exp-highlight-item">
+                  <span class="bullet">&bull;</span>
+                  <span class="lang-en">Applied mobile-first responsive layouts with CSS Flexbox and Grid.</span>
+                  <span class="lang-id">Menerapkan tata letak responsif mobile-first menggunakan CSS Flexbox dan
+                    Grid.</span>
+                </div>
+              </div>
+
+              <div class="exp-tools-row">
+                <span class="tag-pill">HTML</span>
+                <span class="tag-pill">CSS</span>
+                <span class="tag-pill">VS Code</span>
+                <span class="tag-pill">Responsive Design</span>
+                <span class="tag-pill">Git / GitHub</span>
+              </div>
+            </article>
+
+            <!-- Experience Card 2: UI/UX Design -->
+            <article class="exp-card">
+              <div class="exp-header">
+                <span class="exp-role-badge">
+                  <span class="lang-en">Concept &amp; Interface</span>
+                  <span class="lang-id">Konsep &amp; Antarmuka</span>
+                </span>
+                <span class="exp-timeframe">2025 &mdash; Present</span>
+              </div>
+
+              <h3 class="exp-title">
+                <span class="lang-en">UI/UX Design</span>
+                <span class="lang-id">Desain Antarmuka UI/UX</span>
+              </h3>
+
+              <p class="exp-desc lang-en">
+                Creating interface concepts and exploring layouts, user experience, typography, and visual design using
+                Figma. Translating problem statements into intuitive wireframes and prototypes.
+              </p>
+              <p class="exp-desc lang-id">
+                Membuat konsep antarmuka dan mengeksplorasi tata letak, pengalaman pengguna, tipografi, dan desain
+                visual menggunakan Figma. Menerjemahkan kebutuhan pengguna menjadi wireframe dan prototipe yang
+                intuitif.
+              </p>
+
+              <div class="exp-highlights">
+                <div class="exp-highlight-item">
+                  <span class="bullet">&bull;</span>
+                  <span class="lang-en">Formulated monochromatic blue design systems for clean, trustworthy
+                    aesthetics.</span>
+                  <span class="lang-id">Merumuskan palet warna monokromatik biru untuk estetika antarmuka yang elegan
+                    dan rapi.</span>
+                </div>
+                <div class="exp-highlight-item">
+                  <span class="bullet">&bull;</span>
+                  <span class="lang-en">Structured user journeys, interactive wireframes, and component systems in
+                    Figma.</span>
+                  <span class="lang-id">Menyusun alur pengguna, wireframe interaktif, dan sistem komponen di
+                    Figma.</span>
+                </div>
+                <div class="exp-highlight-item">
+                  <span class="bullet">&bull;</span>
+                  <span class="lang-en">Authored UI/UX design reports and documentation for vocational school
+                    evaluations.</span>
+                  <span class="lang-id">Menyusun laporan desain dan dokumentasi proses rancang bangun UI/UX untuk tugas
+                    kejuruan.</span>
+                </div>
+              </div>
+
+              <div class="exp-tools-row">
+                <span class="tag-pill">Figma</span>
+                <span class="tag-pill">Canva</span>
+                <span class="tag-pill">Wireframing</span>
+                <span class="tag-pill">Typography</span>
+                <span class="tag-pill">Design Systems</span>
+              </div>
+            </article>
+
+            <!-- Experience Card 4: Organizational Experience -->
+            <article class="exp-card">
+              <div class="exp-header">
+                <span class="exp-role-badge">
+                  <span class="lang-en">School Community</span>
+                  <span class="lang-id">Organisasi &amp; Kolaborasi</span>
+                </span>
+                <span class="exp-timeframe">2025 &mdash; Present</span>
+              </div>
+
+              <h3 class="exp-title">
+                <span class="lang-en">Organizational Experience</span>
+                <span class="lang-id">Pengalaman Organisasi &amp; Kolaboratif</span>
+              </h3>
+
+              <p class="exp-desc lang-en">
+                Participating in school organizational activities and working collaboratively with other students.
+                Contributing communication and design skills to school initiatives.
+              </p>
+              <p class="exp-desc lang-id">
+                Berpartisipasi dalam kegiatan organisasi sekolah dan bekerja secara kolaboratif bersama rekan-rekan
+                siswa. Berkontribusi dalam hal komunikasi, kerja tim, dan desain materi kegiatan.
+              </p>
+
+              <div class="exp-highlights">
+                <div class="exp-highlight-item">
+                  <span class="bullet">&bull;</span>
+                  <span class="lang-en">Collaborated with peer groups to plan and execute student activities
+                    efficiently.</span>
+                  <span class="lang-id">Bekerja sama dalam kelompok kerja siswa untuk merencanakan dan menjalankan
+                    kegiatan.</span>
+                </div>
+                <div class="exp-highlight-item">
+                  <span class="bullet">&bull;</span>
+                  <span class="lang-en">Honed active listening, team communication, and consensus-building
+                    techniques.</span>
+                  <span class="lang-id">Mengasah kemampuan mendengar aktif, komunikasi tim, serta musyawarah
+                    bersama.</span>
+                </div>
+                <div class="exp-highlight-item">
+                  <span class="bullet">&bull;</span>
+                  <span class="lang-en">Prepared visual presentations and creative documentation materials.</span>
+                  <span class="lang-id">Membantu pembuatan materi presentasi visual dan dokumentasi kegiatan.</span>
+                </div>
+              </div>
+
+              <div class="exp-tools-row">
+                <span class="tag-pill">Team Collaboration</span>
+                <span class="tag-pill">Communication</span>
+                <span class="tag-pill">Event Coordination</span>
+                <span class="tag-pill">Canva</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==============================================================
+           SECTION 06: MY CERTIFICATES
+           (Using Actual Certificate PDFs Provided in the Project)
+           ============================================================== -->
+      <section id="certificate" class="portfolio-section section-certificate">
+        <div class="section-bg-decor" aria-hidden="true">
+          <div class="decor-circle-2"></div>
+        </div>
+
+        <div class="container">
+          <!-- Section Header -->
+          <header class="section-header text-center">
+            <span class="section-eyebrow">
+              <span class="lang-en">Credentials &amp; Courses</span>
+              <span class="lang-id">Sertifikasi &amp; Pelatihan</span>
+            </span>
+            <h2 class="section-title">
+              <span class="lang-en">MY CERTIFICATES</span>
+              <span class="lang-id">SERTIFIKAT SAYA</span>
+            </h2>
+            <p class="section-subtitle">
+              <span class="lang-en">A showcase of official webinars and technical competencies documenting my learning
+                milestones.</span>
+              <span class="lang-id">Dokumentasi sertifikat keikutsertaan webinar dan kompetensi kejuruan yang telah saya
+                ikuti.</span>
+            </p>
+            <div class="divider-line">
+              <span class="line"></span>
+              <span class="dot"></span>
+            </div>
+          </header>
+
+          <!-- Responsive Certificate Grid -->
+          <div class="cert-gallery-grid">
+            <!-- Certificate Card 1: Webinar Kawan SMK 2026 -->
+            <article class="cert-card">
+              <div class="cert-preview-frame">
+                <img src="assets/images/kawansmk-cert-0.jpg" alt="Webinar Kawan SMK 2026 Certificate"
+                  class="cert-preview-img">
+                <div class="cert-overlay">
+                  <a href="assets/certificates/certificate-01.pdf" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-primary">
+                    <span class="lang-en">VIEW CERTIFICATE</span>
+                    <span class="lang-id">LIHAT SERTIFIKAT</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="cert-body">
+                <div class="cert-meta-row">
+                  <span class="cert-issuer">Direktorat SMK &bull; Kemendikbudristek</span>
+                  <span class="cert-year">2026</span>
+                </div>
+
+                <h3 class="cert-title">Webinar Kawan SMK 2026</h3>
+
+                <p class="cert-desc lang-en">
+                  Official certificate of active participation in the national vocational student empowerment webinar
+                  organized by Direktorat SMK Kemendikbudristek.
+                </p>
+                <p class="cert-desc lang-id">
+                  Sertifikat partisipasi aktif dalam webinar nasional pemberdayaan siswa SMK oleh Direktorat Sekolah
+                  Menengah Kejuruan Kemendikbudristek.
+                </p>
+
+                <div class="cert-actions">
+                  <a href="assets/certificates/certificate-01.pdf" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-outline">
+                    <span class="lang-en">VIEW CERTIFICATE</span>
+                    <span class="lang-id">LIHAT SERTIFIKAT</span>
+                  </a>
+                  <a href="assets/certificates/certificate-01.pdf" download="WebinarKawanSMK_Leny.pdf"
+                    class="btn btn-secondary">
+                    <span class="lang-en">Download PDF</span>
+                    <span class="lang-id">Unduh PDF</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Certificate Card 2: Webinar & Workshop STEKOM -->
+            <article class="cert-card">
+              <div class="cert-preview-frame">
+                <img src="assets/images/Stekom_Leny (1)_page-0001.jpg"
+                  alt="Universitas STEKOM Technology Workshop Certificate" class="cert-preview-img">
+                <div class="cert-overlay">
+                  <a href="assets/certificates/certificate-02.pdf" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-primary">
+                    <span class="lang-en">VIEW CERTIFICATE</span>
+                    <span class="lang-id">LIHAT SERTIFIKAT</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="cert-body">
+                <div class="cert-meta-row">
+                  <span class="cert-issuer">Universitas STEKOM</span>
+                  <span class="cert-year">2026</span>
+                </div>
+
+                <h3 class="cert-title">
+                  <span class="lang-en">Information Technology Webinar &amp; Workshop</span>
+                  <span class="lang-id">Webinar &amp; Workshop Teknologi STEKOM</span>
+                </h3>
+
+                <p class="cert-desc lang-en">
+                  Certificate awarded for completing technology and programming competency sessions hosted by
+                  Universitas Sains &amp; Teknologi Komputer.
+                </p>
+                <p class="cert-desc lang-id">
+                  Sertifikat kelulusan workshop dan webinar kompetensi teknologi informasi serta wawasan pemrograman
+                  yang diselenggarakan oleh Universitas STEKOM.
+                </p>
+
+                <div class="cert-actions">
+                  <a href="assets/certificates/certificate-02.pdf" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-outline">
+                    <span class="lang-en">VIEW CERTIFICATE</span>
+                    <span class="lang-id">LIHAT SERTIFIKAT</span>
+                  </a>
+                  <a href="assets/certificates/certificate-02.pdf" download="Stekom_Leny.pdf" class="btn btn-secondary">
+                    <span class="lang-en">Download PDF</span>
+                    <span class="lang-id">Unduh PDF</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Certificate Card 3: Saintech -->
+            <article class="cert-card">
+              <div class="cert-preview-frame">
+                <img src="assets/images/Saintech_Olim.jpg" alt="Saintech Certificate" class="cert-preview-img">
+                <div class="cert-overlay">
+                  <a href="assets/certificates/Saintech_Olim.pdf" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-primary">
+                    <span class="lang-en">VIEW CERTIFICATE</span>
+                    <span class="lang-id">LIHAT SERTIFIKAT</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="cert-body">
+                <div class="cert-meta-row">
+                  <span class="cert-issuer">Saintech.id &bull; Tingkat Nasional</span>
+                  <span class="cert-year">2026</span>
+                </div>
+
+                <h3 class="cert-title">
+                  <span class="lang-en">Indonesian Hero Science Competition 2026</span>
+                  <span class="lang-id">Kompetisi Sains Pahlawan Indonesia 2026</span>
+                </h3>
+
+                <p class="cert-desc lang-en">
+                  Certificate of active participation in the national-level Indonesian Hero Science Competition for high
+                  school and vocational students, organized by Saintech.id.
+                </p>
+                <p class="cert-desc lang-id">
+                  Sertifikat keikutsertaan aktif sebagai peserta dalam Kompetisi Sains Pahlawan Indonesia tingkat
+                  nasional jenjang SMA/SMK sederajat yang diselenggarakan oleh Saintech.id.
+                </p>
+
+                <div class="cert-actions">
+                  <a href="assets/certificates/Saintech_Olim.pdf" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-outline">
+                    <span class="lang-en">VIEW CERTIFICATE</span>
+                    <span class="lang-id">LIHAT SERTIFIKAT</span>
+                  </a>
+                  <a href="assets/certificates/Saintech_Olim.pdf" download="Saintech_Olim_Leny.pdf"
+                    class="btn btn-secondary">
+                    <span class="lang-en">Download PDF</span>
+                    <span class="lang-id">Unduh PDF</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ==============================================================
+           SECTION 07: CONTACT
+           ============================================================== -->
+      <section id="contact" class="portfolio-section section-contact">
+        <div class="section-bg-decor" aria-hidden="true">
+          <div class="decor-circle-glow"></div>
+        </div>
+
+        <div class="container">
+          <!-- Section Header -->
+          <header class="section-header text-center contact-header">
+            <span class="section-eyebrow">
+              <span class="lang-en">Get in touch</span>
+              <span class="lang-id">Hubungi saya</span>
+            </span>
+            <h2 class="section-title">
+              <span class="lang-en">LET'S CONNECT</span>
+              <span class="lang-id">HUBUNGI SAYA</span>
+            </h2>
+            <p class="section-subtitle">
+              <span class="lang-en">Have a project idea, collaboration opportunity, or simply want to connect? Feel free
+                to reach out.</span>
+              <span class="lang-id">Memiliki ide proyek, kesempatan kolaborasi, atau hanya ingin terhubung? Jangan ragu
+                untuk menghubungi saya.</span>
+            </p>
+            <div class="divider-line">
+              <span class="line"></span>
+              <span class="dot"></span>
+            </div>
+          </header>
+
+          <!-- Contact Grid Layout -->
+          <div class="contact-grid">
+            <!-- Left Column: Contact Channels & Social Information -->
+            <div class="contact-info-cards">
+              <!-- Email Channel -->
+              <div class="contact-channel-card">
+                <div class="contact-channel-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                  </svg>
+                </div>
+                <div class="contact-channel-details">
+                  <h4>
+                    <span class="lang-en">Email Address</span>
+                    <span class="lang-id">Alamat Email</span>
+                  </h4>
+                  <a href="mailto:lenyykhoirina@gmail.com">lenyykhoirina@gmail.com</a>
+                </div>
+              </div>
+
+              <!-- GitHub Channel -->
+              <div class="contact-channel-card">
+                <div class="contact-channel-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" />
+                  </svg>
+                </div>
+                <div class="contact-channel-details">
+                  <h4>GitHub</h4>
+                  <a href="https://github.com/lenykhoirina" target="_blank"
+                    rel="noopener noreferrer">github.com/lenykhoirina</a>
+                </div>
+              </div>
+
+              <!-- LinkedIn Channel -->
+              <div class="contact-channel-card">
+                <div class="contact-channel-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                  </svg>
+                </div>
+                <div class="contact-channel-details">
+                  <h4>LinkedIn</h4>
+                  <a href="https://linkedin.com/in/lenykhoirina" target="_blank"
+                    rel="noopener noreferrer">linkedin.com/in/lenykhoirina</a>
+                </div>
+              </div>
+
+              <!-- Instagram Channel -->
+              <div class="contact-channel-card">
+                <div class="contact-channel-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                  </svg>
+                </div>
+                <div class="contact-channel-details">
+                  <h4>Instagram</h4>
+                  <a href="https://instagram.com/lnykhnaaa" target="_blank" rel="noopener noreferrer">@lnykhnaaa</a>
+                </div>
+              </div>
+
+              <!-- Location Channel -->
+              <div class="contact-channel-card">
+                <div class="contact-channel-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                  </svg>
+                </div>
+                <div class="contact-channel-details">
+                  <h4>
+                    <span class="lang-en">School &amp; Location</span>
+                    <span class="lang-id">Sekolah &amp; Domisili</span>
+                  </h4>
+                  <p>SMK N 1 Kandeman &bull; Batang, Jawa Tengah</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Visual Contact Form -->
+            <div class="contact-form-card">
+              <h3>
+                <span class="lang-en">Send a Message</span>
+                <span class="lang-id">Kirim Pesan</span>
+              </h3>
+              <p class="form-subtitle">
+                <span class="lang-en">Leave your name and thoughts below. I'll get back to you as soon as
+                  possible!</span>
+                <span class="lang-id">Tinggalkan nama dan pesan Anda di bawah ini. Saya akan merespons secepat
+                  mungkin!</span>
+              </p>
+
+              <form class="contact-form" action="https://formsubmit.co/lenyykhoirina@gmail.com" method="POST">
+                <!-- FormSubmit Configuration -->
+                <input type="hidden" name="_subject" value="Pesan Baru dari Portofolio Leny Khoirina">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                <!-- Name Input -->
+                <div class="form-group">
+                  <label for="contact-name" class="form-label">
+                    <span class="lang-en">Your Name</span>
+                    <span class="lang-id">Nama Lengkap</span>
+                  </label>
+                  <input type="text" id="contact-name" name="name" class="form-input"
+                    placeholder="e.g. Budi Santoso / John Doe" required>
+                </div>
+
+                <!-- Email Input -->
+                <div class="form-group">
+                  <label for="contact-email" class="form-label">
+                    <span class="lang-en">Your Email</span>
+                    <span class="lang-id">Alamat Email</span>
+                  </label>
+                  <input type="email" id="contact-email" name="email" class="form-input" placeholder="name@example.com"
+                    required>
+                </div>
+
+                <!-- Subject Input -->
+                <div class="form-group">
+                  <label for="contact-subject" class="form-label">
+                    <span class="lang-en">Subject</span>
+                    <span class="lang-id">Subjek Pesan</span>
+                  </label>
+                  <input type="text" id="contact-subject" name="subject" class="form-input"
+                    placeholder="Web Project / Collaboration / Question">
+                </div>
+
+                <!-- Message Textarea -->
+                <div class="form-group">
+                  <label for="contact-message" class="form-label">
+                    <span class="lang-en">Message</span>
+                    <span class="lang-id">Pesan Anda</span>
+                  </label>
+                  <textarea id="contact-message" name="message" class="form-textarea"
+                    placeholder="Write your message here..." required></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+                  <span class="lang-en">Send Message</span>
+                  <span class="lang-id">Kirim Pesan</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ==================================================================
+         FOOTER
+         ================================================================== -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">LENY KHOIRINA</div>
+          <p class="footer-tagline">
+            <span class="lang-en">Software Engineering Student &bull; Interested in Web Development, Programming, and
+              UI/UX Design.</span>
+            <span class="lang-id">Siswa Rekayasa Perangkat Lunak &bull; Tertarik pada Web Development, Pemrograman, dan
+              Desain UI/UX.</span>
+          </p>
+        </div>
+
+        <div class="footer-nav-col">
+          <h5>
+            <span class="lang-en">Quick Navigation</span>
+            <span class="lang-id">Navigasi Cepat</span>
+          </h5>
+          <div class="footer-links">
+            <a href="#home" class="footer-link"><span class="lang-en">Home</span><span
+                class="lang-id">Beranda</span></a>
+            <a href="#about" class="footer-link"><span class="lang-en">About</span><span
+                class="lang-id">Tentang</span></a>
+            <a href="#education" class="footer-link"><span class="lang-en">Education</span><span
+                class="lang-id">Pendidikan</span></a>
+            <a href="#skill" class="footer-link"><span class="lang-en">Skill</span><span
+                class="lang-id">Keahlian</span></a>
+            <a href="#experience" class="footer-link"><span class="lang-en">Experience</span><span
+                class="lang-id">Pengalaman</span></a>
+            <a href="#certificate" class="footer-link"><span class="lang-en">Certificate</span><span
+                class="lang-id">Sertifikat</span></a>
+            <a href="#contact" class="footer-link"><span class="lang-en">Contact</span><span
+                class="lang-id">Kontak</span></a>
+          </div>
+        </div>
+
+        <div class="footer-social-col">
+          <h5>
+            <span class="lang-en">Connect With Me</span>
+            <span class="lang-id">Terhubung</span>
+          </h5>
+          <div class="footer-social-icons">
+            <a href="https://github.com/lenykhoirina" target="_blank" rel="noopener noreferrer" class="social-link"
+              title="GitHub" aria-label="GitHub">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" />
+              </svg>
+            </a>
+            <a href="https://linkedin.com/in/lenykhoirina" target="_blank" rel="noopener noreferrer" class="social-link"
+              title="LinkedIn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+              </svg>
+            </a>
+            <a href="https://instagram.com/lnykhnaaa" target="_blank" rel="noopener noreferrer" class="social-link"
+              title="Instagram" aria-label="Instagram">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+            <a href="mailto:lenyykhoirina@gmail.com" class="social-link" title="Email" aria-label="Email">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>&copy; 2026 Leny Khoirina. All rights reserved.</p>
+        <p>lenykhn</p>
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+
+</html>
