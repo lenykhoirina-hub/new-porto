@@ -2385,6 +2385,43 @@ body:has(#theme-toggle:checked) .form-textarea,
   resize: vertical;
 }
 
+/* Contact Form AJAX Status Message */
+.form-status {
+  padding: 0.9rem 1.1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  display: none;
+}
+
+.form-status.success {
+  display: block;
+  background: rgba(38, 166, 91, 0.12);
+  color: #1e824c;
+  border: 1px solid rgba(38, 166, 91, 0.35);
+}
+
+body:has(#theme-toggle:checked) .form-status.success,
+#theme-toggle:checked ~ .site-wrapper .form-status.success {
+  background: rgba(46, 204, 113, 0.15);
+  color: #7bed9f;
+  border-color: rgba(46, 204, 113, 0.4);
+}
+
+.form-status.error {
+  display: block;
+  background: rgba(231, 76, 60, 0.12);
+  color: #c0392b;
+  border: 1px solid rgba(231, 76, 60, 0.35);
+}
+
+body:has(#theme-toggle:checked) .form-status.error,
+#theme-toggle:checked ~ .site-wrapper .form-status.error {
+  background: rgba(231, 76, 60, 0.2);
+  color: #ff7675;
+  border-color: rgba(231, 76, 60, 0.45);
+}
+
 /* --------------------------------------------------------------------------
    15. FOOTER
    -------------------------------------------------------------------------- */
