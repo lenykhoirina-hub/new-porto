@@ -1,99 +1,75 @@
 /**
- * Leny Khoirina Portfolio - Contact Form Handler (AJAX)
- * Mengirim pesan via FormSubmit secara asinkron (AJAX) tanpa reload atau redirect.
- * 
- * CATATAN PENGHAPUSAN:
- * File ini berdiri sendiri. Jika Anda berubah pikiran dan ingin kembali ke form murni HTML:
- * 1. Hapus file ini (js/contact.js), ATAU
- * 2. Hapus baris `<script src="js/contact.js"></script>` di index.html.
+ * Leny Khoirina Portfolio - Contact Form Handler
+ * Opsi A: Murni JavaScript Lokal & Buka Aplikasi Email / Gmail Langsung
+ * 100% Client-Side JS: Tanpa FormSubmit, tanpa backend, tanpa perlu aktivasi email.
  */
 
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.querySelector('.contact-form');
   if (!form) return;
 
-  const submitBtn = form.querySelector('button[type="submit"]');
   const statusDiv = document.getElementById('form-status');
 
-  form.addEventListener('submit', async function (e) {
+  form.addEventListener('submit', function (e) {
     e.preventDefault();
 
     // Deteksi bahasa aktif (Bahasa Indonesia jika radio lang-id checked)
     const langIdRadio = document.getElementById('lang-id');
     const isIndonesian = langIdRadio ? langIdRadio.checked : false;
 
-    // Simpan konten asli tombol (teks bilingual)
-    const originalBtnHTML = submitBtn.innerHTML;
+    // Ambil data dari form input
+    const name = document.getElementById('contact-name')?.value.trim() || '';
+    const email = document.getElementById('contact-email')?.value.trim() || '';
+    const subject = document.getElementById('contact-subject')?.value.trim() || '';
+    const message = document.getElementById('contact-message')?.value.trim() || '';
 
-    // Ubah status tombol saat sedang memproses
-    submitBtn.disabled = true;
-    submitBtn.style.opacity = '0.75';
-    submitBtn.style.cursor = 'not-allowed';
-    submitBtn.innerHTML = isIndonesian
-      ? '<span>Mengirim pesan...</span>'
-      : '<span>Sending message...</span>';
+    // Target email penerima
+    const recipient = 'lenyykhoirina@gmail.com';
 
-    // Bersihkan tampilan status sebelumnya
+    // Format subjek email
+    const emailSubject = subject || (isIndonesian
+      ? `Pesan Portofolio dari ${name}`
+      : `Portfolio Message from ${name}`);
+
+    // Format isi pesan (body)
+    const emailBody = isIndonesian
+      ? `Halo Leny Khoirina,\n\nNama: ${name}\nEmail: ${email}\n\nPesan:\n${message}\n\n---\nDikirim dari Formulir Kontak Portofolio Leny Khoirina`
+      : `Hello Leny Khoirina,\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n\n---\nSent from Leny Khoirina Portfolio Contact Form`;
+
+    // Encode URI untuk link mailto dan Gmail Web
+    const encodedSubject = encodeURIComponent(emailSubject);
+    const encodedBody = encodeURIComponent(emailBody);
+
+    const mailtoUrl = `mailto:${recipient}?subject=${encodedSubject}&body=${encodedBody}`;
+    const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${encodedSubject}&body=${encodedBody}`;
+
+    // Tampilkan notifikasi sukses langsung di bawah tombol
     if (statusDiv) {
-      statusDiv.className = 'form-status';
-      statusDiv.style.display = 'none';
-      statusDiv.textContent = '';
+      statusDiv.className = 'form-status success';
+      statusDiv.style.display = 'block';
+      statusDiv.innerHTML = isIndonesian
+        ? `<strong>✅ Aplikasi Email Sedang Dibuka...</strong><br>
+           Pesan Anda sudah otomatis terisi di aplikasi email. Cukup klik tombol <strong>Kirim (Send)</strong> untuk mengantarkannya ke <strong>${recipient}</strong>.<br>
+           <span style="display:inline-block; margin-top:0.6rem; font-size:0.82rem;">
+             Tidak otomatis terbuka? 
+             <a href="${gmailWebUrl}" target="_blank" rel="noopener noreferrer" style="color: inherit; font-weight:700; text-decoration: underline;">Buka via Gmail Web</a> atau 
+             <a href="${mailtoUrl}" style="color: inherit; font-weight:700; text-decoration: underline;">Buka Aplikasi Email</a>
+           </span>`
+        : `<strong>✅ Opening Your Email App...</strong><br>
+           Your message has been pre-filled. Simply click <strong>Send</strong> to deliver it to <strong>${recipient}</strong>.<br>
+           <span style="display:inline-block; margin-top:0.6rem; font-size:0.82rem;">
+             Didn't open? 
+             <a href="${gmailWebUrl}" target="_blank" rel="noopener noreferrer" style="color: inherit; font-weight:700; text-decoration: underline;">Open via Gmail Web</a> or 
+             <a href="${mailtoUrl}" style="color: inherit; font-weight:700; text-decoration: underline;">Open Email App</a>
+           </span>`;
     }
 
-    // Ambil data form
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
+    // Buka aplikasi email default perangkat
+    window.location.href = mailtoUrl;
 
-    try {
-      const response = await fetch('https://formsubmit.co/ajax/lenyykhoirina@gmail.com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(data)
-      });
-
-      const result = await response.json().catch(() => null);
-
-      if (response.ok && (!result || result.success === 'true' || result.success === true)) {
-        // Sukses terkirim
-        form.reset();
-
-        if (statusDiv) {
-          statusDiv.className = 'form-status success';
-          statusDiv.style.display = 'block';
-          statusDiv.innerHTML = isIndonesian
-            ? '<strong>✅ Pesan Berhasil Terkirim!</strong><br>Terima kasih sudah menghubungi. Pesan Anda telah terkirim ke email saya.'
-            : '<strong>✅ Message Sent Successfully!</strong><br>Thank you for reaching out. Your message has been delivered to my inbox.';
-        }
-      } else {
-        throw new Error(result && result.message ? result.message : 'Submission failed');
-      }
-    } catch (error) {
-      console.error('Form submit error:', error);
-
-      if (statusDiv) {
-        statusDiv.className = 'form-status error';
-        statusDiv.style.display = 'block';
-
-        // Berikan panduan khusus jika dibuka langsung via file://
-        if (window.location.protocol === 'file:') {
-          statusDiv.innerHTML = isIndonesian
-            ? '<strong>⚠️ Browser Membatasi Pengiriman (file://)</strong><br>Browser memblokir pengiriman AJAX dari file lokal. Buka proyek ini lewat <em>Live Server</em> (VS Code) agar pesan dapat terkirim secara online.'
-            : '<strong>⚠️ Local File Restriction (file://)</strong><br>Browser blocks local AJAX requests. Please run via <em>Live Server</em> in VS Code.';
-        } else {
-          statusDiv.innerHTML = isIndonesian
-            ? '<strong>⚠️ Gagal Mengirim Pesan</strong><br>Terjadi kendala jaringan. Silakan coba lagi atau kirim email langsung ke <a href="mailto:lenyykhoirina@gmail.com" style="color: inherit; text-decoration: underline;">lenyykhoirina@gmail.com</a>.'
-            : '<strong>⚠️ Failed to Send Message</strong><br>Network error occurred. Please try again or email directly to <a href="mailto:lenyykhoirina@gmail.com" style="color: inherit; text-decoration: underline;">lenyykhoirina@gmail.com</a>.';
-        }
-      }
-    } finally {
-      // Kembalikan tombol ke keadaan semula
-      submitBtn.disabled = false;
-      submitBtn.style.opacity = '1';
-      submitBtn.style.cursor = 'pointer';
-      submitBtn.innerHTML = originalBtnHTML;
-    }
+    // Kosongkan form input
+    setTimeout(function () {
+      form.reset();
+    }, 800);
   });
 });
